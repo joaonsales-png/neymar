@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Testes Back End</title>
+<link rel="stylesheet" href="testebackand.css">
+</head>
+<body>
+<header>
+<a class="marca" href="#inicio">Testes Back End</a>
+<nav aria-label="Menu principal"><ul>
+<li><a href="#documentos">A. Documentos</a></li>
+<li><a href="#elaboracao">B. Elaboração</a></li>
+<li><a href="#execucao">C. Execução</a></li>
+<li><a href="#monitoramento">D. Monitoramento</a></li>
+<li><a href="#avaliacao">E. Avaliação</a></li>
+<li><a href="#comunicacao">F. Comunicação</a></li>
+</ul></nav>
+</header>
+
+<main id="inicio">
+<h1>Testes de software back end</h1>
+<p class="lead">O back end guarda as regras e os dados do sistema. Testá-lo evita erros que o usuário só percebe tarde demais, como um pedido perdido.</p>
+
+
+<section id="documentos">
+<h2>A. Documentos de testes</h2>
+<article class="plano">
+<h3>1. Plano de teste</h3>
+<p>Define o que será testado, como, por quem e quando. Inclui escopo, ambiente, riscos e critérios de entrada e saída.</p>
+</article>
+<article class="casos">
+<h3>2. Casos de teste</h3>
+<p>Descrevem cada verificação: entrada, passos e resultado esperado.</p>
+</article>
+<article class="incidente">
+<h3>3. Relatório de incidentes</h3>
+<p>Registra cada falha com passos para reproduzir, resultado obtido, resultado esperado e gravidade.</p>
+</article>
+<article class="resumo">
+<h3>4. Relatório de resumo</h3>
+<p>Fecha o ciclo: quantos casos passaram ou falharam, defeitos abertos e se o produto pode ser liberado.</p>
+</article>
+</section>
+
+<section id="elaboracao">
+<h2>B. Elaboração do caso de teste</h2>
+<p>Um caso de teste é uma pergunta ao sistema com a resposta certa definida antes. Deve ser claro, repetível e independente dos outros.</p>
+<div class="tabela"><table>
+<caption>Exemplo: CT-003</caption>
+<tr><th scope="row">Título</th><td>Rejeitar pedido acima do estoque</td></tr>
+<tr><th scope="row">Pré-condição</th><td>Produto com saldo 2</td></tr>
+<tr><th scope="row">Passos</th><td>Enviar POST /pedidos com quantidade 5</td></tr>
+<tr><th scope="row">Esperado</th><td>Status 409 e saldo continua 2</td></tr>
+</table></div>
+</section>
+
+<section id="execucao">
+<h2>C. Execução do programa</h2>
+<p>Rode os casos em ambiente de homologação, registre se passou, falhou ou ficou bloqueado e guarde as evidências.</p>
+<figure>
+<video controls preload="metadata" poster="video/poster.jpg">
+<source src="videoplayback.mp4" type="video/mp4">
+<p><a href="">Baixar o vídeo</a></p>
+</video>
+<figcaption>Execução de quatro testes de API. O último falha.</figcaption>
+</figure>
+<pre><code>pytest tests/api -v</code></pre>
+</section>
+
+<section id="monitoramento">
+<h2>D. Monitoramento e controle</h2>
+<p>Compare o plano com a realidade e corrija o rumo. Acompanhe:</p>
+<ul>
+<li>progresso da execução;</li>
+<li>taxa de aprovação;</li>
+<li>defeitos abertos por gravidade;</li>
+<li>casos bloqueados.</li>
+</ul>
+</section>
+
+<section id="avaliacao">
+<h2>E. Avaliação de resultados</h2>
+<p>Compare o resultado final com os critérios de saída do plano.</p>
+<div class="tabela"><table>
+<tr><th>Critério</th><th>Meta</th><th>Obtido</th></tr>
+<tr><td>Casos críticos aprovados</td><td>100%</td><td>100%</td></tr>
+<tr><td>Defeitos graves abertos</td><td>0</td><td>1</td></tr>
+</table></div>
+<p>Com um critério não atingido, libere só depois de corrigir e repetir os testes.</p>
+</section>
+
+<section id="comunicacao">
+<h2>F. Comunicação com a equipe de automação</h2>
+<p>Envie à equipe casos claros, com prioridade e dados de exemplo. Receba de volta relatórios de execução e a lista de testes instáveis.</p>
+
+</section>
+</main>
+</body>
+</html>
